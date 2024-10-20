@@ -1,4 +1,4 @@
-.sales-products {
+.sales-products , .sales-product__nav, .sales-products-goods__to__order {
   display: flex;
   flex-wrap: wrap;
   min-height:auto;
@@ -28,10 +28,10 @@
       @include text("Manrope", 600, 12px, 18px, #b37b0e);
       list-style-type: disc;
       padding: 6px 6px 0 6px;
-      width: 156px;
+      width: 146px;
     }
     &__product {
-        width: 240px;
+        width: 230px;
       .sales-product__count {
         @include text("Manrope", 700, 14px, 19.12px, #1b1d1a);
       }
@@ -47,7 +47,7 @@
     &__price {
       @include text("Manrope", 700, 14px, 19.12px, #1b1d1a);
       padding: 6px 14px 0 6px;
-      width: 88px;
+      width: 80px;
     }
     &__author {
       padding: 6px 6px 6px 6px;

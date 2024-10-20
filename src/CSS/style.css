@@ -117,7 +117,7 @@
   padding: 16px;
   border: 1px solid #E2E2E2;
   border-radius: 6px;
-  width: 260px;
+  width: 234px;
 }
 .sales-top__order__title {
   font-family: "Manrope";
@@ -196,22 +196,22 @@
   display: inline-block;
 }
 
-.sales-products {
+.sales-products, .sales-product__nav, .sales-products-goods__to__order {
   display: flex;
   flex-wrap: wrap;
   min-height: auto;
 }
-.sales-products .sales-product {
+.sales-products .sales-product, .sales-product__nav .sales-product, .sales-products-goods__to__order .sales-product {
   padding: 6px;
   display: flex;
 }
-.sales-products .sales-product:first-child {
+.sales-products .sales-product:first-child, .sales-product__nav .sales-product:first-child, .sales-products-goods__to__order .sales-product:first-child {
   background: #ECFDF3;
 }
-.sales-products .sales-product:nth-child(odd) {
+.sales-products .sales-product:nth-child(odd), .sales-product__nav .sales-product:nth-child(odd), .sales-products-goods__to__order .sales-product:nth-child(odd) {
   background: #F5FEFF;
 }
-.sales-products .sales-product__id {
+.sales-products .sales-product__id, .sales-product__nav .sales-product__id, .sales-products-goods__to__order .sales-product__id {
   font-family: "Manrope";
   font-size: 400;
   font-weight: 14px;
@@ -219,7 +219,7 @@
   color: #666666;
   padding: 6px 28px 0 6px;
 }
-.sales-products .sales-product__id__user {
+.sales-products .sales-product__id__user, .sales-product__nav .sales-product__id__user, .sales-products-goods__to__order .sales-product__id__user {
   font-family: "Manrope";
   font-size: 700;
   font-weight: 14px;
@@ -228,7 +228,7 @@
   padding: 6px 6px 0 6px;
   text-decoration: underline;
 }
-.sales-products .sales-product__time__block {
+.sales-products .sales-product__time__block, .sales-product__nav .sales-product__time__block, .sales-products-goods__to__order .sales-product__time__block {
   padding: 6px 6px 0 6px;
   font-family: "Manrope";
   font-size: 400;
@@ -236,7 +236,7 @@
   line-height: 19.12px;
   color: #1b1d1a;
 }
-.sales-products .sales-product__status {
+.sales-products .sales-product__status, .sales-product__nav .sales-product__status, .sales-products-goods__to__order .sales-product__status {
   font-family: "Manrope";
   font-size: 600;
   font-weight: 12px;
@@ -244,27 +244,27 @@
   color: #b37b0e;
   list-style-type: disc;
   padding: 6px 6px 0 6px;
-  width: 156px;
+  width: 146px;
 }
-.sales-products .sales-product__product {
-  width: 240px;
+.sales-products .sales-product__product, .sales-product__nav .sales-product__product, .sales-products-goods__to__order .sales-product__product {
+  width: 230px;
   padding: 6px 6px 0 6px;
 }
-.sales-products .sales-product__product .sales-product__count {
+.sales-products .sales-product__product .sales-product__count, .sales-product__nav .sales-product__product .sales-product__count, .sales-products-goods__to__order .sales-product__product .sales-product__count {
   font-family: "Manrope";
   font-size: 700;
   font-weight: 14px;
   line-height: 19.12px;
   color: #1b1d1a;
 }
-.sales-products .sales-product__product .sales-product__title {
+.sales-products .sales-product__product .sales-product__title, .sales-product__nav .sales-product__product .sales-product__title, .sales-products-goods__to__order .sales-product__product .sales-product__title {
   font-family: "Manrope";
   font-size: 400;
   font-weight: 14px;
   line-height: 19.12px;
   color: #1b1d1a;
 }
-.sales-products .sales-product__product .sales-product__title span {
+.sales-products .sales-product__product .sales-product__title span, .sales-product__nav .sales-product__product .sales-product__title span, .sales-products-goods__to__order .sales-product__product .sales-product__title span {
   font-family: "Manrope";
   font-size: 600;
   font-weight: 14px;
@@ -272,19 +272,19 @@
   color: #447981;
   text-decoration: underline;
 }
-.sales-products .sales-product__price {
+.sales-products .sales-product__price, .sales-product__nav .sales-product__price, .sales-products-goods__to__order .sales-product__price {
   font-family: "Manrope";
   font-size: 700;
   font-weight: 14px;
   line-height: 19.12px;
   color: #1b1d1a;
   padding: 6px 14px 0 6px;
-  width: 88px;
+  width: 80px;
 }
-.sales-products .sales-product__author {
+.sales-products .sales-product__author, .sales-product__nav .sales-product__author, .sales-products-goods__to__order .sales-product__author {
   padding: 6px 6px 6px 6px;
 }
-.sales-products .sales-product__author .sales-product__user {
+.sales-products .sales-product__author .sales-product__user, .sales-product__nav .sales-product__author .sales-product__user, .sales-products-goods__to__order .sales-product__author .sales-product__user {
   font-family: "Manrope";
   font-size: 400;
   font-weight: 14px;
@@ -292,7 +292,7 @@
   color: #1b1d1a;
   margin-bottom: 2px;
 }
-.sales-products .sales-product__author .sales-product__rating {
+.sales-products .sales-product__author .sales-product__rating, .sales-product__nav .sales-product__author .sales-product__rating, .sales-products-goods__to__order .sales-product__author .sales-product__rating {
   font-family: "Manrope";
   font-size: 600;
   font-weight: 14px;
@@ -300,7 +300,7 @@
   color: #447981;
   margin-bottom: 2px;
 }
-.sales-products .sales-product__author .sales-product__id__product {
+.sales-products .sales-product__author .sales-product__id__product, .sales-product__nav .sales-product__author .sales-product__id__product, .sales-products-goods__to__order .sales-product__author .sales-product__id__product {
   font-family: "Manrope";
   font-size: 500;
   font-weight: 14px;
@@ -311,7 +311,7 @@
   align-items: center;
   column-gap: 4px;
 }
-.sales-products .sales-product__author button {
+.sales-products .sales-product__author button, .sales-product__nav .sales-product__author button, .sales-products-goods__to__order .sales-product__author button {
   background: #8cdcde;
   border: none;
   outline: 0;
@@ -323,7 +323,7 @@
   color: #000;
   border-radius: 10px;
 }
-.sales-products .sales-product__address {
+.sales-products .sales-product__address, .sales-product__nav .sales-product__address, .sales-products-goods__to__order .sales-product__address {
   font-family: "Manrope";
   font-size: 400;
   font-weight: 14px;
@@ -332,7 +332,7 @@
   padding: 6px 6px 0 6px;
   width: 156px;
 }
-.sales-products .sales-product__punkt {
+.sales-products .sales-product__punkt, .sales-product__nav .sales-product__punkt, .sales-products-goods__to__order .sales-product__punkt {
   font-family: "Manrope";
   font-size: 400;
   font-weight: 14px;
@@ -341,7 +341,7 @@
   padding: 6px 6px 0 6px;
   width: 66px;
 }
-.sales-products .sales-product__price {
+.sales-products .sales-product__price, .sales-product__nav .sales-product__price, .sales-products-goods__to__order .sales-product__price {
   font-family: "Manrope";
   font-size: 700;
   font-weight: 14px;
@@ -349,7 +349,7 @@
   color: #1b1d1a;
   padding: 6px 39px 0 6px;
 }
-.sales-products .sales-product__punkt_status {
+.sales-products .sales-product__punkt_status, .sales-product__nav .sales-product__punkt_status, .sales-products-goods__to__order .sales-product__punkt_status {
   font-family: "Manrope";
   font-size: 700;
   font-weight: 14px;
