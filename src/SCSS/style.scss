@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    resize: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+.container{
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding:0 20px;
+}
+@mixin text($ff , $fs , $fw , $lh, $c){
+    font-family: $ff;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $c;
+}
+@mixin btn(){
+
+}
+
+@import './header.scss';
+@import './sales/sales.scss'

@@ -1,0 +1,36 @@
+.header{
+    padding: 28px 0;
+    .header-menu__item a{
+        color: #A0A0A0; /* обычный цвет текста */
+        background-color: white; /* обычный фон */
+      }
+      
+      .header-menu__item a.active {
+        color: white; /* цвет текста для активного элемента */
+        background-color: black; /* фон для активного элемента */
+      }
+    &-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__left{
+           display: flex;
+           column-gap: 20px;
+           align-items: center;
+           .header-menu{
+            display: flex;
+            column-gap: 15px;
+            a{
+                @include text('Open Sans' , 600 , 16px , 21.79px, #330400)
+            }
+           }
+        }
+        &__right{
+            .header-contacts{
+                display: flex;
+                column-gap: 20px;
+                align-items: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+.sales-top {
+  &__boxes {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__box {
+    &__title {
+      @include text("Manrope", 600, 32px, 43.71px, #121212);
+      margin-bottom: 18px;
+    }
+    &__search {
+      border-radius: 8px;
+      border: 1px solid #e2e2e2;
+      padding: 12px 10px;
+      width: 340px;
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+      input {
+        width: 100%;
+        border: none;
+        outline: 0;
+      }
+      span {
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+  &__links {
+    display: flex;
+    column-gap: 24px;
+    border-bottom: 1px solid;
+    padding-bottom: 12px;
+    border-image-source: linear-gradient(0deg, #a0a0a0, #a0a0a0),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    a {
+      @include text("Manrope", 500, 16px, 21.86px, #525252);
+      &:hover {
+        color: #330400;
+      }
+    }
+  }
+  &__orders{
+    margin-top: 24px;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+  }
+  &__order{
+    padding: 16px;
+    border: 1px solid #E2E2E2;
+    border-radius: 6px;
+    width: 260px;
+    &__title{
+      @include text("Manrope", 600, 16px, 21.86px, #000000);
+      margin-bottom: 8px;
+    }
+    &__price{
+      @include text("Manrope", 600, 24px, 32.78px, #000000);
+      span{
+      @include text("Manrope", 600, 20px, 27.32px, #888888);
+      display: inline-block;
+      padding: 0 12px;
+      }
+    }
+  }
+  &__nav{
+     padding: 18px 0 20px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+  }
+  &__menu{
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    .sales-top__link{
+      border-radius: 30px;
+      border: 1.5px solid #E2E2E2;
+      padding: 4px 12px;
+      @include text("Inter", 500, 14px, 22.86px, #A0A0A0);
+      cursor: pointer;
+    }
+  }
+  &__filter{
+    display: flex;
+    column-gap: 24px;
+    div{
+      p{
+        @include text("Manrope", 700, 14px, 22.86px, #447981);
+      }
+      display: flex;
+      align-items: center;
+      column-gap: 3.5px;
+      padding: 7.5px 0 7.5px 0;  
+      position: relative;
+      &:first-child::after{
+        position: absolute;
+        content:'';
+        display: block;
+        border-right:1px solid #ECECEC;
+        width: 1px;
+        height: 23px;
+        right:-12px;
+      }
+      span{
+        display: inline-block
+      }
+    }
+  }
+}

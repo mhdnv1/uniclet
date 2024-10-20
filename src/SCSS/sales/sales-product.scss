@@ -1,0 +1,154 @@
+.sales-products {
+  display: flex;
+  flex-wrap: wrap;
+  min-height:auto;
+  .sales-product {
+    padding: 6px;
+    &:first-child{
+        background: #ECFDF3;
+    }
+    &:nth-child(odd){
+        background: #F5FEFF;
+    }
+    display: flex;
+    &__id {
+      @include text("Manrope", 400, 14px, 19.12px, #666666);
+      padding: 6px 28px 0 6px;
+    }
+    &__id__user {
+      @include text("Manrope", 700, 14px, 19.12px, #447981);
+      padding: 6px 6px 0 6px;
+      text-decoration: underline;
+    }
+    &__time__block {
+      padding: 6px 6px 0 6px;
+      @include text("Manrope", 400, 14px, 19.12px, #1b1d1a);
+    }
+    &__status {
+      @include text("Manrope", 600, 12px, 18px, #b37b0e);
+      list-style-type: disc;
+      padding: 6px 6px 0 6px;
+      width: 156px;
+    }
+    &__product {
+        width: 240px;
+      .sales-product__count {
+        @include text("Manrope", 700, 14px, 19.12px, #1b1d1a);
+      }
+      .sales-product__title {
+        @include text("Manrope", 400, 14px, 19.12px, #1b1d1a);
+        span {
+          @include text("Manrope", 600, 14px, 19.12px, #447981);
+          text-decoration: underline;
+        }
+      }
+      padding: 6px 6px 0 6px;
+    }
+    &__price {
+      @include text("Manrope", 700, 14px, 19.12px, #1b1d1a);
+      padding: 6px 14px 0 6px;
+      width: 88px;
+    }
+    &__author {
+      padding: 6px 6px 6px 6px;
+      .sales-product__user {
+        @include text("Manrope", 400, 14px, 19.12px, #1b1d1a);
+        margin-bottom: 2px;
+      }
+      .sales-product__rating {
+        @include text("Manrope", 600, 14px, 19.12px, #447981);
+        margin-bottom: 2px;
+      }
+      .sales-product__id__product {
+        @include text("Manrope", 500, 14px, 19.12px, #525252);
+        margin-bottom: 2px;
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
+      }
+      button {
+        background: #8cdcde;
+        border: none;
+        outline: 0;
+        padding: 8px 12px;
+        @include text("Manrope", 800, 14px, 19.12px, #000);
+        border-radius: 10px;
+      }
+    }
+    &__address {
+      @include text("Manrope", 400, 14px, 19.12px, #1b1d1a);
+      padding: 6px 6px 0 6px;
+      width: 156px;
+    }
+    &__punkt{
+      @include text("Manrope", 400, 14px, 19.12px, #1b1d1a);
+      padding: 6px 6px 0 6px;
+      width: 66px;
+    }
+    &__price{
+      @include text("Manrope", 700, 14px, 19.12px, #1b1d1a);
+      padding: 6px 39px 0 6px;
+    }
+    &__punkt_status{
+      @include text("Manrope", 700, 14px, 15px, #1b1d1a);
+      padding: 9px 14.5px;
+      border: 2px solid #8CDCDE;
+      border-radius: 10px;
+      width: 138px;
+      height: 45px;
+    }
+  }
+}
+.sale-pogination{
+    display: flex;
+    justify-content: end;
+    column-gap: 55px;
+    padding-top: 32px;
+    cursor: pointer;
+    p{
+      display: flex;
+      column-gap: 8px;
+      align-items: center;
+      @include text("Manrope", 500, 14px, 19.12px, #1b1d1a);
+    }
+    &__text1{
+      @include text("Manrope", 500, 14px, 19.12px, #757575);
+    }
+    &__1{
+      @include text("Manrope", 500, 14px, 19.12px, #fff);
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background: #000;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__2{
+      @include text("Manrope", 500, 14px, 19.12px, #1b1d1a);
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__3{
+      @include text("Manrope", 500, 14px, 19.12px, #1b1d1a);
+      display: inline-block;
+      width: 143px;
+      height: 32px;
+      background: #fff;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+}
+.sales-top__link.active {
+  color: white; /* цвет текста для активного элемента */
+  background-color: black; /* фон для активного элемента */
+}

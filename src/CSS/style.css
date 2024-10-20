@@ -1,0 +1,440 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  resize: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  padding: 28px 0;
+}
+.header .header-menu__item a {
+  color: #A0A0A0; /* обычный цвет текста */
+  background-color: white; /* обычный фон */
+}
+.header .header-menu__item a.active {
+  color: white; /* цвет текста для активного элемента */
+  background-color: black; /* фон для активного элемента */
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-nav__left {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+.header-nav__left .header-menu {
+  display: flex;
+  column-gap: 15px;
+}
+.header-nav__left .header-menu a {
+  font-family: "Open Sans";
+  font-size: 600;
+  font-weight: 16px;
+  line-height: 21.79px;
+  color: #330400;
+}
+.header-nav__right .header-contacts {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.sales {
+  padding: 10px 0 20px;
+}
+
+.sales-top__boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.sales-top__box__title {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 32px;
+  line-height: 43.71px;
+  color: #121212;
+  margin-bottom: 18px;
+}
+.sales-top__box__search {
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  padding: 12px 10px;
+  width: 340px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+.sales-top__box__search input {
+  width: 100%;
+  border: none;
+  outline: 0;
+}
+.sales-top__box__search span {
+  position: relative;
+  top: 3px;
+}
+.sales-top__links {
+  display: flex;
+  column-gap: 24px;
+  border-bottom: 1px solid;
+  padding-bottom: 12px;
+  border-image-source: linear-gradient(0deg, #a0a0a0, #a0a0a0), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+.sales-top__links a {
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 16px;
+  line-height: 21.86px;
+  color: #525252;
+}
+.sales-top__links a:hover {
+  color: #330400;
+}
+.sales-top__orders {
+  margin-top: 24px;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+.sales-top__order {
+  padding: 16px;
+  border: 1px solid #E2E2E2;
+  border-radius: 6px;
+  width: 260px;
+}
+.sales-top__order__title {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 16px;
+  line-height: 21.86px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+.sales-top__order__price {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 24px;
+  line-height: 32.78px;
+  color: #000000;
+}
+.sales-top__order__price span {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 20px;
+  line-height: 27.32px;
+  color: #888888;
+  display: inline-block;
+  padding: 0 12px;
+}
+.sales-top__nav {
+  padding: 18px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sales-top__menu {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+}
+.sales-top__menu .sales-top__link {
+  border-radius: 30px;
+  border: 1.5px solid #E2E2E2;
+  padding: 4px 12px;
+  font-family: "Inter";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 22.86px;
+  color: #A0A0A0;
+  cursor: pointer;
+}
+.sales-top__filter {
+  display: flex;
+  column-gap: 24px;
+}
+.sales-top__filter div {
+  display: flex;
+  align-items: center;
+  column-gap: 3.5px;
+  padding: 7.5px 0 7.5px 0;
+  position: relative;
+}
+.sales-top__filter div p {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 22.86px;
+  color: #447981;
+}
+.sales-top__filter div:first-child::after {
+  position: absolute;
+  content: "";
+  display: block;
+  border-right: 1px solid #ECECEC;
+  width: 1px;
+  height: 23px;
+  right: -12px;
+}
+.sales-top__filter div span {
+  display: inline-block;
+}
+
+.sales-products {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: auto;
+}
+.sales-products .sales-product {
+  padding: 6px;
+  display: flex;
+}
+.sales-products .sales-product:first-child {
+  background: #ECFDF3;
+}
+.sales-products .sales-product:nth-child(odd) {
+  background: #F5FEFF;
+}
+.sales-products .sales-product__id {
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #666666;
+  padding: 6px 28px 0 6px;
+}
+.sales-products .sales-product__id__user {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #447981;
+  padding: 6px 6px 0 6px;
+  text-decoration: underline;
+}
+.sales-products .sales-product__time__block {
+  padding: 6px 6px 0 6px;
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+}
+.sales-products .sales-product__status {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 12px;
+  line-height: 18px;
+  color: #b37b0e;
+  list-style-type: disc;
+  padding: 6px 6px 0 6px;
+  width: 156px;
+}
+.sales-products .sales-product__product {
+  width: 240px;
+  padding: 6px 6px 0 6px;
+}
+.sales-products .sales-product__product .sales-product__count {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+}
+.sales-products .sales-product__product .sales-product__title {
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+}
+.sales-products .sales-product__product .sales-product__title span {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #447981;
+  text-decoration: underline;
+}
+.sales-products .sales-product__price {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+  padding: 6px 14px 0 6px;
+  width: 88px;
+}
+.sales-products .sales-product__author {
+  padding: 6px 6px 6px 6px;
+}
+.sales-products .sales-product__author .sales-product__user {
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+  margin-bottom: 2px;
+}
+.sales-products .sales-product__author .sales-product__rating {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #447981;
+  margin-bottom: 2px;
+}
+.sales-products .sales-product__author .sales-product__id__product {
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #525252;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+.sales-products .sales-product__author button {
+  background: #8cdcde;
+  border: none;
+  outline: 0;
+  padding: 8px 12px;
+  font-family: "Manrope";
+  font-size: 800;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #000;
+  border-radius: 10px;
+}
+.sales-products .sales-product__address {
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+  padding: 6px 6px 0 6px;
+  width: 156px;
+}
+.sales-products .sales-product__punkt {
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+  padding: 6px 6px 0 6px;
+  width: 66px;
+}
+.sales-products .sales-product__price {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+  padding: 6px 39px 0 6px;
+}
+.sales-products .sales-product__punkt_status {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 15px;
+  color: #1b1d1a;
+  padding: 9px 14.5px;
+  border: 2px solid #8CDCDE;
+  border-radius: 10px;
+  width: 138px;
+  height: 45px;
+}
+
+.sale-pogination {
+  display: flex;
+  justify-content: end;
+  column-gap: 55px;
+  padding-top: 32px;
+  cursor: pointer;
+}
+.sale-pogination p {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+}
+.sale-pogination__text1 {
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #757575;
+}
+.sale-pogination__1 {
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #fff;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: #000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sale-pogination__2 {
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sale-pogination__3 {
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #1b1d1a;
+  display: inline-block;
+  width: 143px;
+  height: 32px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sales-top__link.active {
+  color: white; /* цвет текста для активного элемента */
+  background-color: black; /* фон для активного элемента */
+}
+
+/*# sourceMappingURL=style.css.map */
