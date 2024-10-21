@@ -84,6 +84,10 @@ getAllProducts();
 // get products goods to order
 let modalAddOrder = document.querySelector(".modal-add-order");
 let modalEdit = document.querySelector(".modal-add-edit");
+
+let filterTab = document.querySelector(".filter-tab");
+let filterBtn = document.querySelector('#filter-btn')
+
 let modalClose = document.querySelector(".modal-close");
 let modalCloseEdit = document.querySelector(".modal-close-edit");
 
@@ -100,6 +104,11 @@ function closeModalEdit() {
 
 modalClose.addEventListener("click", closeModal);
 modalCloseEdit.addEventListener("click", closeModalEdit);
+
+filterBtn.addEventListener('click' , ()=>{
+  filterTab.classList.add("show");
+  filterTab.classList.remove("hide");
+})
 
 const getAllProductsGoods = () => {
   const url = `http://localhost:3000/goods-to-order${
@@ -248,3 +257,35 @@ Array.from(getGoods_to_order).map((item) =>
     getAllProductsGoods();
   })
 );
+
+
+// tabs
+function openTab(event, tabName) {
+  // Скрыть все табы
+  const tabContents = document.querySelectorAll('.tab-content');
+  tabContents.forEach(content => {
+      content.classList.remove('active');
+  });
+
+  // Удалить активный класс у всех кнопок
+  const tabButtons = document.querySelectorAll('.tab-button');
+  tabButtons.forEach(button => {
+      button.classList.remove('active');
+  });
+
+  // Показать текущий таб и добавить активный класс к кнопке
+  document.getElementById(tabName).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+
+window.onclick = function(event) {
+  if (event.target === filterBtn) {
+      closeModalFilter();
+  }
+};
+
+function closeModalFilter() {
+  filterTab.classList.add("hide");
+  filterTab.classList.remove("show");
+}
