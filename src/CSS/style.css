@@ -15,6 +15,14 @@
   padding: 0 20px;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .header {
   padding: 28px 0;
 }
@@ -200,6 +208,7 @@
   display: flex;
   flex-wrap: wrap;
   min-height: auto;
+  cursor: pointer;
 }
 .sales-products .sales-product, .sales-product__nav .sales-product, .sales-products-goods__to__order .sales-product {
   padding: 6px;
@@ -435,6 +444,383 @@
 .sales-top__link.active {
   color: white; /* цвет текста для активного элемента */
   background-color: black; /* фон для активного элемента */
+}
+
+.modal-add-order,
+.modal-add-edit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 1s;
+}
+.modal-add-order__content,
+.modal-add-edit__content {
+  cursor: pointer;
+  background: white;
+  max-width: 802px;
+  width: 100%;
+  min-height: 800px;
+  border-radius: 8px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translate(-50px, -50%);
+}
+.modal-add-order__content .modal-close,
+.modal-add-edit__content .modal-close {
+  cursor: pointer;
+  z-index: 999;
+}
+.modal-add-order__nav,
+.modal-add-edit__nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: #f5f5f5;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  margin-bottom: 16px;
+}
+.modal-add-order__nav p,
+.modal-add-edit__nav p {
+  font-family: "Manrope";
+  font-size: 800;
+  font-weight: 20px;
+  line-height: 18px;
+  color: #000000;
+}
+.modal-add-order__nav p span,
+.modal-add-edit__nav p span {
+  font-family: "Manrope";
+  font-size: 800;
+  font-weight: 20px;
+  line-height: 18px;
+  color: #808080;
+}
+.modal-add-order__icons,
+.modal-add-edit__icons {
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+  margin-top: 16px;
+}
+.modal-add-order__icons .modal-add-order__icon,
+.modal-add-edit__icons .modal-add-order__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+.modal-add-order__icons .modal-add-order__icon div,
+.modal-add-edit__icons .modal-add-order__icon div {
+  position: relative;
+  top: -10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #717171;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-add-order__icons .modal-add-order__icon .green,
+.modal-add-edit__icons .modal-add-order__icon .green {
+  background: #ecfdf3;
+  border: none;
+}
+.modal-add-order__icons .modal-add-order__icon .green + p,
+.modal-add-edit__icons .modal-add-order__icon .green + p {
+  font-family: "Manrope";
+  font-size: 800;
+  font-weight: 20px;
+  line-height: 22px;
+  color: #027a48;
+}
+.modal-add-order__icons .modal-add-order__icon p,
+.modal-add-edit__icons .modal-add-order__icon p {
+  font-family: "Manrope";
+  font-size: 800;
+  font-weight: 20px;
+  line-height: 22px;
+  color: #000000;
+}
+.modal-add-order__input,
+.modal-add-edit__input {
+  padding: 16px 16px 0 16px;
+}
+.modal-add-order__input__title,
+.modal-add-edit__input__title {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 16px;
+  line-height: 21.86px;
+  color: #121212;
+  margin-bottom: 16px;
+}
+.modal-add-order__input__search,
+.modal-add-edit__input__search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 340px;
+  border: 1px solid #e2e2e2;
+  padding: 12px;
+  border-radius: 4px;
+}
+.modal-add-order__input__search input,
+.modal-add-edit__input__search input {
+  border: none;
+  outline: 0;
+}
+.modal-add-order__product,
+.modal-add-edit__product {
+  padding: 16px;
+}
+.modal-add-order__product__title,
+.modal-add-edit__product__title {
+  margin: 16px 0;
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 16px;
+  line-height: 21.86px;
+  color: #121212;
+}
+.modal-add-order__product__title span,
+.modal-add-edit__product__title span {
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 19.12px;
+  color: #717171;
+}
+.modal-add-order__product__summa,
+.modal-add-edit__product__summa {
+  background: #fbd6c6;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+.modal-add-order__product__summa p,
+.modal-add-edit__product__summa p {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 20px;
+  color: #121212;
+}
+.modal-add-order__product__boxes,
+.modal-add-edit__product__boxes {
+  display: flex;
+  column-gap: 8px;
+  margin-top: 8px;
+}
+.modal-add-order__product__box,
+.modal-add-edit__product__box {
+  display: flex;
+  position: relative;
+  padding: 16px;
+  column-gap: 12px;
+}
+.modal-add-order__product__box:nth-child(1),
+.modal-add-edit__product__box:nth-child(1) {
+  width: 45%;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1490196078);
+}
+.modal-add-order__product__box:nth-child(2),
+.modal-add-edit__product__box:nth-child(2) {
+  width: 55%;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1490196078);
+  padding: 0;
+}
+.modal-add-order__product__box:nth-child(2) > div,
+.modal-add-edit__product__box:nth-child(2) > div {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-add-order__product__box:nth-child(2) > div:nth-child(1),
+.modal-add-edit__product__box:nth-child(2) > div:nth-child(1) {
+  padding: 11px 34px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 1px solid #808080;
+  background: #f5f5f5;
+}
+.modal-add-order__product__box:nth-child(2) > div:nth-child(1) P,
+.modal-add-edit__product__box:nth-child(2) > div:nth-child(1) P {
+  font-family: "Manrope";
+  font-size: 500;
+  font-weight: 14px;
+  line-height: 18.2px;
+  color: #000000;
+}
+.modal-add-order__product__box:nth-child(2) > div:nth-child(2),
+.modal-add-edit__product__box:nth-child(2) > div:nth-child(2) {
+  padding: 16px 15px 16px 34px;
+  display: flex;
+  align-items: center;
+}
+.modal-add-order__product__box:nth-child(2) > div:nth-child(2) p,
+.modal-add-edit__product__box:nth-child(2) > div:nth-child(2) p {
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 18.2px;
+  color: #000000;
+}
+.modal-add-order__product__box:nth-child(2) > div:nth-child(2) p:nth-child(3),
+.modal-add-edit__product__box:nth-child(2) > div:nth-child(2) p:nth-child(3) {
+  border: 1px solid #888;
+  padding: 8px 20px;
+  border-radius: 10px;
+}
+.modal-add-order__product__box:nth-child(2) > div:nth-child(2) p button,
+.modal-add-edit__product__box:nth-child(2) > div:nth-child(2) p button {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #888888;
+  color: #808080;
+  border-radius: 2px;
+  line-height: 13px;
+  background: white;
+  cursor: pointer;
+}
+.modal-add-order__product__box:nth-child(2) > div:nth-child(3),
+.modal-add-edit__product__box:nth-child(2) > div:nth-child(3) {
+  padding: 20px 0px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #808080;
+  border-top: 1px solid #808080;
+  column-gap: 8px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 18.2px;
+  color: #ff5745;
+}
+.modal-add-order__product__box img,
+.modal-add-edit__product__box img {
+  width: 84px;
+  height: auto;
+  border-radius: 3px 0px 0px 0px;
+}
+.modal-add-order__product__box__clear,
+.modal-add-edit__product__box__clear {
+  position: absolute;
+  right: 16px;
+}
+.modal-add-order__product__box__content,
+.modal-add-edit__product__box__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.modal-add-order__product__box__text h3,
+.modal-add-edit__product__box__text h3 {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 20px;
+  color: #121212;
+  text-decoration: underline;
+}
+.modal-add-order__product__box__text p,
+.modal-add-edit__product__box__text p {
+  font-family: "Manrope";
+  font-size: 400;
+  font-weight: 14px;
+  line-height: 20px;
+  color: #121212;
+}
+.modal-add-order__product__box__price,
+.modal-add-edit__product__box__price {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 20px;
+  color: #121212;
+}
+.modal-add-order__product__footer,
+.modal-add-edit__product__footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 27px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f5f5;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.modal-add-order__product__footer div,
+.modal-add-edit__product__footer div {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 20px;
+  line-height: 18px;
+  color: #000000;
+}
+.modal-add-order__product__footer div span,
+.modal-add-edit__product__footer div span {
+  font-family: "Manrope";
+  font-size: 600;
+  font-weight: 20px;
+  line-height: 18px;
+  color: #ff5745;
+}
+.modal-add-order__product__footer div button,
+.modal-add-edit__product__footer div button {
+  padding: 10px 41px;
+  border-radius: 20px;
+  border: none;
+  outline: 0;
+}
+.modal-add-order__product__footer div button:nth-child(1),
+.modal-add-edit__product__footer div button:nth-child(1) {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 20px;
+  color: #330400;
+  background: #fff0ea;
+}
+.modal-add-order__product__footer div button:nth-child(2),
+.modal-add-edit__product__footer div button:nth-child(2) {
+  font-family: "Manrope";
+  font-size: 700;
+  font-weight: 14px;
+  line-height: 20px;
+  color: #fff;
+  background: #ff5745;
+}
+
+.modal-add-edit .modal-add-order__product__boxes {
+  flex-direction: column;
+}
+.modal-add-edit .modal-add-order__product__boxes > div {
+  width: 50%;
+}
+.modal-add-edit .modal-add-order__product__box {
+  width: 50%;
+}
+.modal-add-edit .modal-add-order__product__box:nth-child(2) {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

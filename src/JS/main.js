@@ -1,7 +1,8 @@
- 
 let category = "all";
 let salesProducts = document.querySelector(".sales-products");
-let salesProductsGoods = document.querySelector(".sales-products-goods__to__order");
+let salesProductsGoods = document.querySelector(
+  ".sales-products-goods__to__order"
+);
 
 // get products
 const getAllProducts = () => {
@@ -81,6 +82,24 @@ const getAllProducts = () => {
 getAllProducts();
 
 // get products goods to order
+let modalAddOrder = document.querySelector(".modal-add-order");
+let modalEdit = document.querySelector(".modal-add-edit");
+let modalClose = document.querySelector(".modal-close");
+let modalCloseEdit = document.querySelector(".modal-close-edit");
+
+function closeModal() {
+  modalAddOrder.classList.add("hide");
+  modalAddOrder.classList.remove("show");
+  document.body.style.overflow = "";
+}
+function closeModalEdit() {
+  modalEdit.classList.add("hide");
+  modalEdit.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+modalClose.addEventListener("click", closeModal);
+modalCloseEdit.addEventListener("click", closeModalEdit);
 
 const getAllProductsGoods = () => {
   const url = `http://localhost:3000/goods-to-order${
@@ -150,7 +169,27 @@ const getAllProductsGoods = () => {
                         <p class="sales-product__punkt_status">${item.punkt_status}</p>
                     </div>
         `;
-        console.log(item);
+        // modal add order
+        let punkt_status = document.querySelectorAll(
+          ".sales-product__punkt_status"
+        );
+        Array.from(punkt_status).forEach((item) => {
+          if (item.textContent === "Создать заказ") {
+            item.addEventListener("click", () => {
+              modalAddOrder.classList.add("show");
+              modalAddOrder.classList.remove("hide");
+              document.body.style.overflow = "hidden";
+            });
+          }
+          else if (item.textContent === "Редактировать") {
+            item.addEventListener("click", () => {
+              modalEdit.classList.add("show");
+              modalEdit.classList.remove("hide");
+              document.body.style.overflow = "hidden";
+            });
+          }
+        });
+
       });
     })
     .catch((err) => console.log(err));
@@ -158,20 +197,19 @@ const getAllProductsGoods = () => {
 
 getAllProductsGoods();
 
-// 
+//
 let getCategory = document.querySelectorAll(".sales-top__link");
 let getGoods_to_order = document.querySelectorAll(".goods_to_order");
 
 Array.from(getCategory).forEach((link) => {
   link.addEventListener("click", () => {
     if (link.classList.contains("active")) {
-      link.classList.remove("active"); 
-    } 
-    else {
+      link.classList.remove("active");
+    } else {
       link.classList.add("active");
     }
-})})
-
+  });
+});
 
 // sort category
 Array.from(getCategory).map((item) =>
@@ -202,10 +240,9 @@ Array.from(getGoods_to_order).map((item) =>
       category = "delivery";
     } else if (item.textContent == "Завершенные") {
       category = "completed";
-    }else if (item.textContent == "Возвраты и обмены") {
+    } else if (item.textContent == "Возвраты и обмены") {
       category = "returns";
-    }
-    else if (item.textContent == "Все") {
+    } else if (item.textContent == "Все") {
       category = "all";
     }
     getAllProductsGoods();

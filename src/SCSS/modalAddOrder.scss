@@ -1,0 +1,263 @@
+.modal-add-order,
+.modal-add-edit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 1s;
+  &__content {
+    cursor: pointer;
+    background: white;
+    max-width: 802px;
+    width: 100%;
+    min-height: 800px;
+    border-radius: 8px;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translate(-50px, -50%);
+    .modal-close {
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background: #f5f5f5;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    margin-bottom: 16px;
+    p {
+      @include text("Manrope", 800, 20px, 18px, #000000);
+      span {
+        @include text("Manrope", 800, 20px, 18px, #808080);
+      }
+    }
+  }
+  &__icons {
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+    margin-top: 16px;
+    .modal-add-order__icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      div {
+        position: relative;
+        top: -10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #717171;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .green {
+        background: #ecfdf3;
+        border: none;
+        & + p {
+          @include text("Manrope", 800, 20px, 22px, #027a48);
+        }
+      }
+      p {
+        @include text("Manrope", 800, 20px, 22px, #000000);
+      }
+    }
+  }
+  &__input {
+    padding: 16px 16px 0 16px;
+    &__title {
+      @include text("Manrope", 600, 16px, 21.86px, #121212);
+      margin-bottom: 16px;
+    }
+    &__search {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 340px;
+      border: 1px solid #e2e2e2;
+      padding: 12px;
+      border-radius: 4px;
+      input {
+        border: none;
+        outline: 0;
+      }
+    }
+  }
+  &__product {
+    padding: 16px;
+    &__title {
+      margin: 16px 0;
+      @include text("Manrope", 600, 16px, 21.86px, #121212);
+      span {
+        @include text("Manrope", 500, 14px, 19.12px, #717171);
+      }
+    }
+    &__summa {
+      background: #fbd6c6;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-radius: 4px;
+      p {
+        @include text("Manrope", 700, 14px, 20px, #121212);
+      }
+    }
+    &__boxes {
+      display: flex;
+      column-gap: 8px;
+      margin-top: 8px;
+    }
+    &__box {
+      display: flex;
+      position: relative;
+      padding: 16px;
+      column-gap: 12px;
+      &:nth-child(1) {
+        width: 45%;
+        box-shadow: 1px 1px 5px 0px #00000026;
+      }
+      &:nth-child(2) {
+        width: 55%;
+        flex-direction: column;
+        box-shadow: 1px 1px 5px 0px #00000026;
+        padding: 0;
+        & > div {
+          display: flex;
+          justify-content: space-between;
+          &:nth-child(1) {
+            padding: 11px 34px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom: 1px solid #808080;
+            background: #f5f5f5;
+            P {
+              @include text("Manrope", 500, 14px, 18.2px, #000000);
+            }
+          }
+          &:nth-child(2) {
+            padding: 16px 15px 16px 34px;
+            display: flex;
+            align-items: center;
+            p {
+              @include text("Manrope", 400, 14px, 18.2px, #000000);
+              &:nth-child(3) {
+                border: 1px solid #888;
+                padding: 8px 20px;
+                border-radius: 10px;
+              }
+              button {
+                width: 13px;
+                height: 13px;
+                border: 1px solid #888888;
+                color: #808080;
+                border-radius: 2px;
+                line-height: 13px;
+                background: white;
+                cursor: pointer;
+              }
+            }
+          }
+          &:nth-child(3) {
+            padding: 20px 0px 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-bottom: 1px solid #808080;
+            border-top: 1px solid #808080;
+            column-gap: 8px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            @include text("Manrope", 400, 14px, 18.2px, #ff5745);
+          }
+        }
+      }
+      img {
+        width: 84px;
+        height: auto;
+        border-radius: 3px 0px 0px 0px;
+      }
+      &__clear {
+        position: absolute;
+        right: 16px;
+      }
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      &__text {
+        h3 {
+          @include text("Manrope", 700, 14px, 20px, #121212);
+          text-decoration: underline;
+        }
+        p {
+          @include text("Manrope", 400, 14px, 20px, #121212);
+        }
+      }
+      &__price {
+        @include text("Manrope", 700, 14px, 20px, #121212);
+      }
+    }
+    &__footer {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 27px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f5f5f5;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      div {
+        @include text("Manrope", 600, 20px, 18px, #000000);
+        span {
+          @include text("Manrope", 600, 20px, 18px, #ff5745);
+        }
+        button {
+          padding: 10px 41px;
+          border-radius: 20px;
+          border: none;
+          outline: 0;
+          &:nth-child(1) {
+            @include text("Manrope", 700, 14px, 20px, #330400);
+            background: #fff0ea;
+          }
+          &:nth-child(2) {
+            @include text("Manrope", 700, 14px, 20px, #fff);
+            background: #ff5745;
+          }
+        }
+      }
+    }
+  }
+}
+.modal-add-edit {
+  .modal-add-order__product__boxes {
+    flex-direction: column;
+    & > div {
+      width: 50%;
+    }
+  }
+  .modal-add-order__product__box {
+    width: 50%;
+    &:nth-child(2) {
+      padding-top: 40px;
+      display: flex;
+      flex-direction: row;
+      padding: 16px;
+      border: none;
+    }
+  }
+}

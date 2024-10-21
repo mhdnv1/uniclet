@@ -19,9 +19,13 @@
     line-height: $lh;
     color: $c;
 }
-@mixin btn(){
-
+.hide{
+    display: none;
+}
+.show{
+    display: block;
 }
 
 @import './header.scss';
-@import './sales/sales.scss'
+@import './sales/sales.scss';
+@import './modalAddOrder.scss';
